@@ -1,0 +1,148 @@
+@import url(../all.css);
+
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic);
+html { }
+body { border: 0px; background-color: #222; font-size: 13px; font-family: 'Ubuntu', sans-serif; color: #ccc; line-height: 1.5; margin: 10px; padding: 20px 20px 50px; text-align: left; max-width: 95%; min-width: 800px; margin: 0 auto; border-radius: 5px; background-image: url(bg.jpg), url(bg_bottom.jpg); background-repeat: repeat-x, repeat-x; background-position: center -32px, center bottom; }
+
+
+/* Add ID's to these styles if you have any pages that aren't tall enoug on their own and the background gets funky */
+#body_login {min-height:800px}
+#body_login #login {padding-top: 50px;}
+
+
+
+.pagebody {  }
+
+#contentframe { min-height: 699px; }
+#home #contentframe { min-height: 701px; }
+#homepagecolumns { padding: 10px 0 30px }/*Custom Header Formating*/
+.pagetitle { width: auto; }
+.pagetitle h1 { text-align: left; color: #FFF; font-size: 24px; padding: 10px 0 4px 0px; position: relative; left: 5px; top: 0px; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2); }
+.brandlogo a { background-image: url(logo.png); display: block; background-repeat: no-repeat; background-position: top center; width: 100px; height: 100px; position: relative; top: 0px; left: 5px; }
+.brandlogo img { visibility: hidden; height: 38px; }
+/*.brandlogo img { opacity: .1; }
+.brandlogo img:hover { opacity: .5; }*/
+.homepagecolumn .homepagemodule caption { width: auto; }
+.pageheader .brandlogo { width: 100px; }
+.pageheader .welcome { width: 400px; position: relative; }
+.pageheader .bannerimage { width: auto; }
+.pageheader .welcome { vertical-align: middle }
+/*MFL Menu */
+.mainmenucurrent { font-size: 12px; text-decoration: none; background-color: #222; text-transform: uppercase; }
+.mainmenuon, A.mainmenuon:link, A.mainmenuon:visited, A.mainmenuon:hover, A.mainmenuon:active { color: #ccc; background-color: #333; font-size: 12px; text-decoration: none; text-transform: uppercase; }
+.mainmenuoff, A.mainmenuoff:link, A.mainmenuoff:visited, A.mainmenuoff:hover, A.mainmenuoff:active, A.mainmenucurrent:link, A.mainmenucurrent:visited, A.mainmenucurrent:hover, A.mainmenucurrent:active { color: #ccc; background-color: #222; font-size: 12px; text-decoration: none; text-transform: uppercase; }
+#menu0 { top: 0px !important; }
+#menu0 .mainmenuoff, #menu0 .mainmenucurrent { background-color: transparent; }
+.mmenucontainer { border: none !important; }
+.mmenucontainer a { padding: 3px; }
+#menu0 img { /* IE 8 */ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"; /* IE 5-7 */ filter: alpha(opacity=20); /* Netscape */ -moz-opacity: .2; /* Safari 1.x */ -khtml-opacity: .2; opacity: .2; display: none; }
+#menu0 .mainmenuon { border-left: 1px solid #454545 }
+#menu0 .mainmenuoff { border-left: 1px solid #454545 }
+#menu0 .mainmenucurrent { border-left: 1px solid #454545 }
+#menu0 .mainmenuon:first-child { border-left: 0px solid }
+#menu0 .mainmenuoff:first-child { border-left: 0px solid }
+#menu0 .mainmenucurrent:first-child { border-left: 0px solid }
+.module_expand { font-size: .7em; }
+caption { background-color: transparent; color: #CCC; text-align: left; padding-left: 18px; font-size: 1.2em; }
+caption span { color: #CCC; font-weight: 700; text-transform: uppercase }
+.homepagecolumn #standings h3, .homepagecolumn #a_standings h3, .homepagecolumn .homepagemodule caption { padding-top: 5px; padding-bottom: 5px; background-color: transparent; }
+.homepagecolumn #standings h3, .homepagecolumn #a_standings h3, #standings h3, #a_standings h3 { color: #666; text-align: left; font-size: 18px; background-color: #333; text-transform:uppercase }
+#standings th { text-align: center }
+#standings th.ficonname { text-align: left }
+h3 { font-size: 100%; }
+h3 a:hover { color: #666; }
+th { /* text-align: left; */ color: #fff; font-style: normal; text-transform: uppercase; background-color: transparent; padding: 0px 0 2px 0; border-bottom: 3px solid #454545; }
+th a:link, th a:visited { color: #CCC }
+th a:hover { color: #888 }
+/* .report th:last-child, .report tr td:last-child { text-align: right } */
+/* #body_options_01 .report th:last-child, #body_options_01 .report tr td:last-child { text-align: left } */
+.report th:last-child { padding-right: 3px; }
+/* .report th:first-child, .report tr td:first-child { text-align: left } */
+#my_player_photos th, #my_player_photos tr td:first-child { text-align: center }
+#my_player_photos .oddtablerow td, #my_player_photos th, #home #my_options td { border-bottom: 0px }
+option, select, input { color: #333; }
+.eventablerow td { border-bottom: 1px solid #454545; background-color: #333; margin-top: 1px; padding: 5px 5px 4px 0px; }
+.oddtablerow td { border-bottom: 1px solid #666; background-color: #333; margin-top: 1px; padding: 5px 5px 4px 0px; }
+tr.reportfooter td { border-bottom: 0px !important; }
+.newposition td, .newposition th { border-top: 1px solid #666; }
+a:link, a:visited { color: #CCC; text-decoration: none }
+a:hover { text-decoration: underline }
+/*Horizontal and Vertical Menu's*/
+#hsubmenu { color: white; padding: 0 5px; border: 1px solid #454545; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #333; -webkit-box-shadow: 0px 0px 10px 5px #191919; box-shadow: 0px 0px 10px 5px #191919; width: 890px; margin: 0 auto 50px; }
+#hsubmenu ul a { text-decoration: none; padding: 8px 8px 10px; border: 1px solid #333; }
+#hsubmenu ul a:hover { background: #444; color: white; border-left: 1px solid #292929; border-right: 1px solid #222; }
+#hsubmenu ul li { border: 0px solid #454545; }
+#vsubmenu ul li ul { margin-left: -14px; }
+#vsubmenu ul li { text-transform: uppercase; padding: 8px 5px 0px 1px; overflow: hidden; }
+#vsubmenu ul li a { padding: 4px 0px 5px 15px; border-top: 0px solid #CCC; border-bottom: 1px solid #454545; color: #ccc; background-color: #333; text-transform: none; font-size: .9em }
+#vsubmenu ul li a:hover { background-color: #da2b2a; border-bottom: 1px solid #b22222 }
+#vsubmenu ul { width: 91px; }
+#vsubmenu { color: white; padding: 10px 0 10px 10px; margin-bottom: 50px; border: 1px solid #454545; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #333; -webkit-box-shadow: 0px 0px 10px 5px #191919; box-shadow: 0px 0px 10px 5px #191919; margin-right: 20px; }
+/*formatting MFL Message*/
+.homepagemessage { border: 2px solid #DDD; padding: 5px; width: 620px; }
+.homepagemessage td { background-color: #333; border: none; }
+.homepagemessage th { padding-left: 5px }
+.homepagemessage h4 { text-align: left }
+#withmenus.withleft { margin-left: 100px; }
+/*Home Page Tabs*/
+#homepagetabs { border-bottom: 0px solid #ccc; padding-left: 28px; }
+#homepagetabs li { padding: 5px 15px; margin-right: 0px; background: #333; border-right: 1px solid #454545; color: #eee; text-transform: uppercase; font-weight: 800 }
+#homepagetabs li:hover { background: #555; }
+#homepagetabs ul { background: #222; border: 1px solid #333; color: #222 }
+#homepagetabs li.currenttab { border-bottom: 1px solid #333; background: #555; border-right: 1px solid #454545 }
+#tab0 { border-radius: 5px 0 0 5px; }
+.pagefooter { color: #eee; padding-top: 20px; margin-bottom: 0px; margin-top: 20px; border-top: 0px solid #454545; opacity:.2 }
+.pagefooter a:link, .pagefooter a:visited {color:#eee}
+#homepagetabs li:last-child { border-radius: 0 5px 5px 0; }
+/*moves the pagefooter border even wit the homepagetabs*/
+#home { margin-bottom: -21px; }
+#home .pagefooter { border-top: 0px solid #CCC; }
+.pagefooter table {
+padding-bottom: 0px;
+margin-top: 25px;
+position: relative;
+top: 46px;
+}
+/*Formating for two colum layout pages*/
+.two_column_layout .h2hmatchups { min-width: 350px;margin: 0 10p }
+table.two_column_layout td .report { min-width: 400px;margin: 5px 10px }
+.report { border: 1px solid #454545; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 15px; width: 95%; background-color: #333; -webkit-box-shadow: 0px 0px 10px 5px #191919; box-shadow: 0px 0px 10px 5px #191919; }
+/*Commish Setup Page*/
+#commissioner_setup #withmenus ul { padding: 10px 0 10px 30px; }
+#commissioner_setup li { list-style: none; padding: 3px 0 }
+#commissioner_setup th { padding: 10px 0 10px 15px }
+#commissioner_setup ul a { font-size: 1em }
+#commissioner_setup .two_column_layout table { width: 450px; margin: 10px; }
+#commissioner_setup #withmenus #vsubmenu ul li a { padding: 4px 0px 5px 0px; margin-left: -15px; }
+#commissioner_setup #withmenus #vsubmenu ul { padding: 0px; margin-left: 0px; }
+#commissioner_setup #withmenus #hsubmenu { top: -39px; }
+#commissioner_setup #use_with_caution { color: fireBrick; }
+/* image borders*/
+.articlepicturetable img { border: 8px solid white; -webkit-box-shadow: 0px 0px 10px 5px #222; box-shadow: 0px 0px 10px 5px #222; margin: 0 0 0 0px; }
+.articlepicturetable { margin: 0 0 0 10px; }
+/* alignment of reports*/
+td.rank { text-align: left }
+/* Jim Mora Section*/
+.playoffbracket .oddtablerow td, .playoffbracket .eventablerow td { border-bottom: inherit; background-color: transparent; margin-top: 0px; padding: inherit; }
+.topteam, .playoffbracket .oddtablerow .topteam, .playoffbracket .eventablerow .topteam, .playoffbracket .oddtablerow .bottomteam, .playoffbracket .eventablerow .bottomteam { border-bottom: 1px #DDD solid; }
+.bracket, .bottomteam { border-right: 1px #DDD solid; }
+/*bug fixes*/
+#home #withmenus { overflow: hidden; }
+.homepagetabcontent { clear: both }
+/*end bug fixes*/
+
+#fantasy_articles select { min-width: 300px; overflow: hidden; }
+#board_show form { width: 95%; padding-left: 27px; }
+
+
+.reportform {
+margin-bottom: 10px;
+}
+
+/* KCA added Aug 15, 2012 */
+#ajax_ld th, #ajax_la th { background-color: #333 }
+
+/* KCA added Aug 22, 2012 */
+.playoffbracket .oddtablerow, .playoffbracket .eventablerow, #options_02 th, #home #submit_lineup th, #body_my_tickets th { background-color: #333 }
