@@ -20,7 +20,7 @@ def get_all_bids():
 
   finished_bids_page = api.opener.open('http://football.myfantasyleague.com/2014/options?L=51974&O=102')
   soup2 = BeautifulSoup(finished_bids_page.read())
-  auction_table = soup2.find_all('table')[1]
+  auction_table = soup2.find_all('table')[2]
   finished_bids = auction_table.find_all('tr')[1:]
 
   return (current_bids, finished_bids)
@@ -91,7 +91,55 @@ def extract_bids():
         x = [ranking['player'], '', '', ranking['adp'], ranking['rank'], ranking['age'], ranking['position']]
         writer.writerow(x)
 
-extract_bids()
+def get_rows(url, api):
+  page = api.opener.open(url)
+  soup = BeautifulSoup(page.read())
+  return soup.find_all('table')[2].find_all('tr')[1:]
+
+def rows_to_csv(rows, file_name):
+  with open(file_name, 'wb') as csvfile:
+    writer = csv.writer(csvfile, delimiter = ',')
+    headers = ['Name', 'Salary', 'Owner', 'ADP', 'Rank', 'Age', 'Position']
+    writer.writerow(headers)
+    for row in rows:
+      d = row.find_all('td')
+      player_info = re.split('[ ,]+', d[0].text.strip())
+      salary = re.search('^(\$[\d,]+).*', d[1].text).group(1)
+      owner = re.search('(<font.*>)?([\w \.]+)(</font>)?', d[2].img['alt']).group(2)
+      print(owner)
+      import pdb; pdb.set_trace()
+      #if len(player_info) == 5 and player_info[4] != '(R)':
+      if len(player_info) == 5:
+        last_name = ' '.join(player_info[0:2])
+        first_name = player_info[2]
+      elif player_info[0] != '*':
+        last_name = player_info[0]
+        first_name = player_info[1]
+      else:
+        first_name = ' '.join(player_info[2:5])
+        last_name = ''
+      key = nfdl_keepers.normalize_name('{}, {}'.format(last_name, first_name))
+      rankings = nfdl_keepers.dlf_rankings()
+      try:
+        ranking = rankings[key]
+        x = [ranking['player'], salary, owner, ranking['adp'], ranking['rank'], ranking['age'], ranking['position']]
+        writer.writerow(x)
+      except:
+        x = ['{} {}'.format(first_name, last_name), salary, owner, '', '', '', '']
+        writer.writerow(x)
+
+
+def compare_auctions():
+  api = mfl_api.Api(2014)
+  api.login(51974, '0015', sys.argv[1])
+  url = 'http://football18.myfantasyleague.com/2014/options?L=51974&O=102&DISPLAY=CONFERENCE0{}'
+  ind_rows = get_rows(url.format('0'), api)
+  lib_rows = get_rows(url.format('1'), api)
+
+  rows_to_csv(ind_rows, 'usfl_auction_ind.csv')
+  rows_to_csv(lib_rows, 'usfl_auction_lib.csv')
+if __name__ == '__main__':
+  extract_bids()
 
 
 
